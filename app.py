@@ -27,5 +27,11 @@ def About():
     return "This is the About page."
 
 
+@app.route('/Info')
+def Info():
+    print("This is the About page.")
+    return "This is the About page."
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5007)
