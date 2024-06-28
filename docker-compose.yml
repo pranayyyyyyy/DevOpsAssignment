@@ -1,0 +1,21 @@
+version: '3.3'  # Adjust to a supported version, such as '3.7', '3.6', etc.
+
+services:
+  flask-app:
+    build: 
+      context: .
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: app.py
+    command: flask run --host=0.0.0.0
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    # Add other configurations for Redis if needed
+
+
